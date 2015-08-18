@@ -1548,8 +1548,7 @@ const int Xspress3::waitForStartEvent(const char *message)
  */
 void Xspress3::writeOutScas(void *&pSCA, int numChannels, NDDataType_t dataType)
 {
-    if (dataType == NDFloat64)
-    {
+    if (dataType == NDFloat64) {
       double *pScaData = static_cast<double*>(pSCA);
       for (int chan=0; chan<numChannels; ++chan) {
         this->setDoubleParam(chan, this->xsp3ChanSca0Param, static_cast<epicsFloat64>(pScaData[0]));
@@ -1563,7 +1562,7 @@ void Xspress3::writeOutScas(void *&pSCA, int numChannels, NDDataType_t dataType)
         pScaData += XSP3_SW_NUM_SCALERS;
       }
     }
-    else{
+    else {
       u_int32_t *pScaData = static_cast<u_int32_t*>(pSCA);
       for (int chan=0; chan<numChannels; ++chan) 
       {
