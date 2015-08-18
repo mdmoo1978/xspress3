@@ -1564,8 +1564,7 @@ void Xspress3::writeOutScas(void *&pSCA, int numChannels, NDDataType_t dataType)
     }
     else {
       u_int32_t *pScaData = static_cast<u_int32_t*>(pSCA);
-      for (int chan=0; chan<numChannels; ++chan) 
-      {
+      for (int chan=0; chan<numChannels; ++chan) {
         this->setDoubleParam(chan, this->xsp3ChanSca0Param, static_cast<epicsFloat64>(pScaData[0]));
         this->setDoubleParam(chan, this->xsp3ChanSca1Param, static_cast<epicsFloat64>(pScaData[1]));
         this->setDoubleParam(chan, this->xsp3ChanSca2Param, static_cast<epicsFloat64>(pScaData[2]));
